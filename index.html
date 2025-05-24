@@ -1,0 +1,237 @@
+
+<!DOCTYPE html><html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Freaky Valle</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap');body {
+  margin: 0;
+  font-family: 'Quicksand', sans-serif;
+  color: #ff4da6;
+  text-align: center;
+  overflow-x: hidden;
+  background: #ffe4f0;
+}
+
+.stars, .hearts {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.star, .heart {
+  position: absolute;
+  opacity: 0.8;
+  animation-timing-function: ease-in-out;
+}
+
+.star {
+  font-size: 30px;
+  animation: floatStars 100s infinite;
+}
+
+@keyframes floatStars {
+  0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+  50% { opacity: 1; transform: translateY(40vh) rotate(180deg); }
+  100% { transform: translateY(-10vh) rotate(360deg); opacity: 0; }
+}
+
+.heart {
+  font-size: 20px;
+  animation: floatHearts 6s infinite;
+}
+
+@keyframes floatHearts {
+  0% { transform: translateY(100vh) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(-120vh) rotate(720deg); opacity: 0; }
+}
+
+header {
+  padding: 30px 20px;
+  position: relative;
+  z-index: 1;
+}
+
+header img {
+  width: 150px;
+  border-radius: 50%;
+}
+
+header h1 {
+  font-size: 2.5em;
+  margin: 15px 0 5px;
+}
+
+header p {
+  font-size: 1.2em;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 20px;
+}
+
+nav a {
+  background: #fff0f5;
+  border: 2px dashed #ff69b4;
+  color: #d63384;
+  padding: 12px 20px;
+  border-radius: 30px;
+  text-decoration: none;
+  box-shadow: 0 5px 15px rgba(255, 105, 180, 0.4);
+  transition: transform 0.3s ease, background 0.3s ease;
+  animation: floatButton 4s ease-in-out infinite;
+}
+
+@keyframes floatButton {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+nav a:hover {
+  transform: translateY(-10px);
+  background: #ffe4ea;
+}
+
+.info, .repartidor, .seccion {
+  margin: 40px 20px;
+  font-size: 1.1em;
+  line-height: 1.6em;
+  background: #fffafc;
+  border-radius: 20px;
+  padding: 20px;
+  border: 2px dotted #ffb6c1;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.info a {
+  color: #d63384;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.metodos {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 10px;
+}
+
+.metodos a img {
+  height: 30px;
+}
+
+footer {
+  margin: 30px 0;
+  font-size: 0.9em;
+}
+.codigo {
+  font-size: 0.8em;
+  margin-top: 20px;
+  color: #c71585;
+}
+
+  </style>
+</head>
+<body>
+  <audio autoplay loop>
+    <source src="https://cdn.pixabay.com/download/audio/2022/10/30/audio_c9cc3d7f7b.mp3?filename=lofi-study-112191.mp3" type="audio/mpeg">
+    Tu navegador no soporta audio HTML5.
+  </audio>  <div class="stars"></div>
+  <div class="hearts"></div>  <script>
+    const pastelColors = ["#ffffff", "#ffccff", "#ccffff", "#ffdddd", "#e0bbff", "#ffe4e1", "#cce5ff"];
+    for (let i = 0; i < 80; i++) {
+      const star = document.createElement("span");
+      star.className = "star";
+      star.textContent = "☆";
+      star.style.left = Math.random() * 100 + "%";
+      star.style.top = Math.random() * 100 + "%";
+      star.style.fontSize = (20 + Math.random() * 25) + "px";
+      star.style.animationDelay = (Math.random() * 100) + "s";
+      star.style.color = pastelColors[Math.floor(Math.random() * pastelColors.length)];
+      document.querySelector(".stars").appendChild(star);
+    }
+
+    for (let i = 0; i < 30; i++) {
+      const heart = document.createElement("span");
+      heart.className = "heart";
+      heart.textContent = "♡";
+      heart.style.left = Math.random() * 100 + "%";
+      heart.style.top = Math.random() * 100 + "%";
+      heart.style.fontSize = (15 + Math.random() * 20) + "px";
+      heart.style.animationDelay = (Math.random() * 6) + "s";
+      heart.style.color = i % 2 === 0 ? "white" : "#ff1493";
+      document.querySelector(".hearts").appendChild(heart);
+    }
+  </script>  <header>
+    <img src="/mnt/data/file-UjBKRqUzvjnh4aSjqQ43mD" alt="Freaky Valle Logo" />
+    <h1>Freaky Valle</h1>
+    <p>Tu tienda freaky cutecore favorita</p>
+  </header>  <nav>
+    <a href="#papeleria">Papelería</a>
+    <a href="#ropa">Ropa</a>
+    <a href="#friki">Artículos frikis</a>
+    <a href="#accesorios">Accesorios</a>
+    <a href="#escolar">Escolar</a>
+    <a href="#figuras">Figuras coleccionables</a>
+    <a href="#tecnologia">Tecnología</a>
+    <a href="#repartidor">Solicitar trabajo</a>
+  </nav>  <div id="papeleria" class="seccion">
+    <h2>Papelería</h2>
+    <p>Artículos de papelería de Sanrio, cutecore estilo y más, a partir desde 60 pesos</p>
+  </div>  <div id="ropa" class="seccion">
+    <h2>Ropa</h2>
+    <p>Cualquier estilo de ropa desde 100 - 200 pesos, solo para ti</p>
+  </div>  <div id="friki" class="seccion">
+    <h2>Artículos frikis</h2>
+    <p>Llaveros, tazas, productos de tu interés a partir de 40 pesos</p>
+  </div>  <div id="accesorios" class="seccion">
+    <h2>Accesorios</h2>
+    <p>Accesorios para ti, de todo tipo de estilo desde 50 pesos</p>
+  </div>  <div id="escolar" class="seccion">
+    <h2>Escolar</h2>
+    <p>Mochilas cutecore o de otro estilo desde 250 pesos</p>
+  </div>  <div id="figuras" class="seccion">
+    <h2>Figuras coleccionables</h2>
+    <p>Cualquier tipo de figuras de tus personajes favoritos desde 200 pesos</p>
+  </div>  <div id="tecnologia" class="seccion">
+    <h2>Tecnología</h2>
+    <p>Desde celulares hasta tabletas a partir de 2,050 pesos</p>
+  </div>  <div class="info">
+    <p>Pedidos a partir de <strong>100 pesos</strong> y <strong>envío gratis desde 280 pesos</strong>.</p>
+    <p>Contactarme al <strong>+52 729 852 0507</strong> o por Instagram: <a href="https://www.instagram.com/freakyvalle/" target="_blank">@freakyvalle</a></p>
+    <div class="metodos">
+      <a href="https://www.skrill.com" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/0/02/Skrill_logo.svg" alt="Skrill"></a>
+      <a href="https://www.bancoazteca.com.mx" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Logo_Banco_Azteca.svg/512px-Logo_Banco_Azteca.svg.png" alt="Banco Azteca"></a>
+      <a href="https://www.paypal.com" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal"></a>
+    </div>
+  </div>  <div id="repartidor" class="repartidor">
+    <h2>Solicitud de Repartidor</h2>
+    <p><strong>Requisitos:</strong></p>
+    <ul style="text-align:left; max-width: 500px; margin: 0 auto;">
+      <li>Tener entre 15 y 20 años</li>
+      <li>Conocer TODO Valle de Chalco</li>
+      <li>Ser leal y no quedarte con los paquetes del cliente</li>
+      <li>Aceptar paga de 100 pesos al día</li>
+      <li>Trabajo de 5 horas (9am a 2pm)</li>
+      <li>Incluye snack de comida (refresco/jugo y ramen grande)</li>
+      <li>Horario de comida de solo 20 minutos</li>
+      <li>Disponibilidad completa en ese horario</li>
+      <li>Recoger pedidos en: Sur 14 Mz 288 Lt 4, Niños Héroes</li>
+    </ul>
+    <p><strong>Favor de enviar su solicitud a través de <a href="mailto:susanamont71@gmail.com?subject=Solicitud%20de%20Repartidor&body=Nombre%20completo%3A%0AEdad%3A%0AFecha%20de%20nacimiento%3A%0ADirecci%C3%B3n%3A%0ARaz%C3%B3n%20por%20la%20que%20necesitas%20este%20trabajo%3A">susanamont71@gmail.com</a></strong></p>
+  </div>  <footer>
+    &copy; 2025 Freaky Valle - Todos los derechos reservados
+    <div class="codigo">Código de descuento de 40 pesos, único en su compra: <strong>Ki0free3</strong></div>
+  </footer>
+</body>
+</html>
